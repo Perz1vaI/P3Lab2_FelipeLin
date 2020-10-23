@@ -97,9 +97,9 @@ int main(int argc, char** argv) {
             }
             case 3:
             {
-                int x = 0,numero_veces;
-                int ArregloPascal[100];
-                
+                int x = 0, numero_veces;
+                int ArregloPascal[100000];
+
                 cout << "Cuantas veces lo va hacer: " << endl;
                 cin >> numero_veces;
                 for (int i = 1; i <= numero_veces; i++) {
