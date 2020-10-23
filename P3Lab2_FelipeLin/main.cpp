@@ -37,19 +37,26 @@ int main(int argc, char** argv) {
             }
             case 2:
             {
-                int valorEx, ValorF,repeticiones,exp;
-                
-                cout << "Ingrese el x de la funcion exponencial:";
+                int repeticiones, exp;
+                double ValorEx = 0, ValorF = 0;
+                long double resultado = 0;
+
+
+                cout << "Ingrese el x de la funcion exponencial:" << endl;
                 cin >> exp;
-                
-                cout << "Escoja cuantas veces quiere realizar la tarea:";
+
+                cout << "Escoja cuantas veces quiere realizar la tarea:" << endl;
                 cin >> repeticiones;
-                
-                for(int i = 0; i < repeticiones; i++){
-                    
+
+                for (int i = 0; i < repeticiones; i++) {
+                    ValorEx = PotenciaX(exp, i);
+                    ValorF = FactorialN(i);
+                    resultado += ValorEx / ValorF;
                 }
 
-                    break;
+                cout << "resultado: " << resultado << endl;
+
+                break;
             }
             case 3:
             {
@@ -60,20 +67,31 @@ int main(int argc, char** argv) {
                 cout << "No existe esa opcion\n";
                 break;
         }
-        cout << "1. Ejercicio 1\n2. Ejercicio 2 \n3. Salida\n";
+        cout << "1. Ejercicio 1\n2. Ejercicio 2\n3. Ejercicio 3\n4. Salida\n";
         cout << "Ingrese la opcion: ";
         cin >> menu;
     }
 
 
-    double PotenciaX(int base, int repeticiones);
-    {
 
-    }
-    double FactorialN(int repeticiones);
-    {
-        `
+
+}
+
+double PotenciaX(int base, int repeticiones) {
+
+    if (repeticiones == 0) {
+        return 1;
+    } else {
+        return base * PotenciaX(base, repeticiones - 1);
     }
 
+}
+
+double FactorialN(int repeticiones) {
+    if (repeticiones == 0) {
+        return 1;
+    } else {
+        return repeticiones * FactorialN(repeticiones - 1);
+    }
 }
 
