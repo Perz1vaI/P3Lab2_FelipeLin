@@ -35,7 +35,7 @@ int main(int argc, char** argv) {
             case 1:
             {
                 int ArregloPrimo[25] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 73, 79, 83, 89};
-                int NumeroBase, posiscion_arreglo = 0, veces_repetidas=0;
+                int NumeroBase, posiscion_arreglo = 0, veces_repetidas = 0;
                 bool continuar = false;
                 string cadena = "";
 
@@ -97,7 +97,29 @@ int main(int argc, char** argv) {
             }
             case 3:
             {
+                int x = 0,numero_veces;
+                int ArregloPascal[100];
+                
+                cout << "Cuantas veces lo va hacer: " << endl;
+                cin >> numero_veces;
+                for (int i = 1; i <= numero_veces; i++) {
+                    for (int j = x; j >= 0; j--) {
+                        if (j == x || j == 0) {
+                            ArregloPascal[j] = 1;
+                        } else {
+                            ArregloPascal[j] = ArregloPascal[j] + ArregloPascal[j - 1];
+                        }
 
+                    }
+
+                    x++;
+
+
+                    for (int k = 0; k < x; k++) {
+                        cout << "[" << ArregloPascal[k];
+                    }
+                    cout << "]" << endl;
+                }
 
 
                 break;
