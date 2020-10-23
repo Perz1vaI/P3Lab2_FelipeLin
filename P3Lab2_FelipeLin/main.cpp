@@ -116,10 +116,17 @@ int main(int argc, char** argv) {
 
 
                     for (int k = 0; k < x; k++) {
-                        cout << "[" << ArregloPascal[k];
+                        if(k==x-1){
+                            cout << ArregloPascal[k];
+                        }else{
+                            cout << ArregloPascal[k] << ",";
+                        }
                     }
-                    cout << "]" << endl;
+                    cout << endl;
+                    
                 }
+                
+                cout << endl;
 
 
                 break;
