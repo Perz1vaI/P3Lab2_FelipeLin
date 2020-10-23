@@ -13,6 +13,8 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <string>
+
 
 using namespace std;
 
@@ -32,13 +34,48 @@ int main(int argc, char** argv) {
         switch (menu) {
             case 1:
             {
+                int ArregloPrimo[25] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 73, 79, 83, 89};
+                int NumeroBase, posiscion_arreglo = 0, veces_repetidas=0;
+                bool continuar = false;
+                string cadena = "";
+
+                cout << "Ingrese el numero base: " << endl;
+                cin >> NumeroBase;
+
+
+                while (continuar == false) {
+                    if (NumeroBase % ArregloPrimo[posiscion_arreglo] == 0) {
+                        NumeroBase /= ArregloPrimo[posiscion_arreglo];
+                        veces_repetidas++;
+
+                    } else if (NumeroBase % ArregloPrimo[posiscion_arreglo] != 0) {
+
+                        cadena += to_string(ArregloPrimo[posiscion_arreglo]);
+                        cadena += "^";
+                        cadena += to_string(veces_repetidas);
+                        cadena += "*";
+                        veces_repetidas = 0;
+                        posiscion_arreglo++;
+                    }
+
+                    if (NumeroBase == 1) {
+                        cadena += to_string(ArregloPrimo[posiscion_arreglo]);
+                        cadena += "^";
+                        cadena += to_string(veces_repetidas);
+                        continuar = true;
+                    }
+
+                }
+
+                cout << cadena << endl;
+
 
                 break;
             }
             case 2:
             {
-                int repeticiones, exp;
-                double ValorEx = 0, ValorF = 0;
+                int repeticiones;
+                double ValorEx = 0, ValorF = 0, exp;
                 long double resultado = 0;
 
 
@@ -60,6 +97,8 @@ int main(int argc, char** argv) {
             }
             case 3:
             {
+
+
 
                 break;
             }
